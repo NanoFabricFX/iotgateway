@@ -1,14 +1,12 @@
 # iotgateway 
 ## [iotgateway在线体验](http://42.193.160.84:518/)访问：http://42.193.160.84:518/
 ## [iotgateway教程文档](http://42.193.160.84/)访问：http://iotgateway.net/
-## github地址:[iotgateway](https://github.com/iioter/iotgateway/) https://github.com/iioter/iotgateway
-## gitee地址:[iotgateway](https://gitee.com/iioter/iotgateway/) https://gitee.com/iioter/iotgateway
-基于.net6的跨平台物联网网关。通过可视化配置，轻松的连接到你的任何设备和系统(如PLC、扫码枪、CNC、数据库、串口设备、上位机、OPC Server、OPC UA Server、Mqtt Server等)，从而与 Thingsboard、IoTSharp或您自己的物联网平台进行双向数据通讯。提供简单的驱动开发接口；当然也可以进行边缘计算。
+基于.net6的跨平台物联网网关。通过可视化配置，轻松的连接到你的任何设备和系统(如PLC、扫码枪、CNC、数据库、串口设备、上位机、OPC Server、OPC UA Server、Mqtt Server等)，从而与 Thingsboard、IoTSharp、ThingsCloud或您自己的物联网平台进行双向数据通讯。提供简单的驱动开发接口；当然也可以进行边缘计算。
 
 * 抛砖引玉，共同进步
 * 基于.net6的开源物联网网关
 * 浏览器可视化的配置方式实现数据采集(使用wtm开发)
-* 物联网网关mqtt+opcua双通道实时输出，支持thingsboard、iotsharp等第三方平台
+* 物联网网关mqtt+opcua双通道实时输出，支持thingsboard、iotsharp、thingscloud等第三方平台
 * 内置Mqtt服务端,支持websocket，进行标准mqtt输出。本地端口1888 admin 000000
 * 内置OPCUA服务端,数据实时更新。匿名本地访问:opc.tcp://localhost:62541/Quickstarts/ReferenceServer
 * 内置三菱PLC、Modbus驱动全协议支持、MT机床、欧姆龙PLC、OPCUA客户端、西门子PLC、AB(罗克韦尔)PLC、
@@ -50,12 +48,14 @@
 
 # 运行
 ## windows主机运行：
-1. [下载Releasev0.4.0](https://github.com/iioter/iotgateway/releases/download/v0.4.0/iotgateway-v0.4.0.zip)发布版本
-2. [下载.net6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) sdk或runtime
-3. 安装.net6 
-4. 解压release包，运行IoTGateway.exe
-5. 访问[iotgateway](http://localhost:518/)后台：http://localhost:518
-
+1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-windows-x64.zip)发布版本
+2. 解压release包，运行IoTGateway.exe
+## linux-x64主机运行：
+1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-linux-x64.zip)发布版本
+2. 解压release包，运行IoTGateway
+## linux-arm主机运行：
+1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-linux-arm.rar)发布版本
+2. 解压release包，运行IoTGateway
 ## linux/amd64,win/amd64 docker运行(官方仓)
 1. docker run -d -p 518:518 -p 1888:1888 -p 62541:62541 -p 503:503 --name iotgateway --restart always 15261671110/iotgateway
 ## linux/amd64,win/amd64 docker运行(阿里仓)
@@ -71,8 +71,9 @@
 3. docker run -d -p 518:518 -p 1888:1888 -p 62541:62541 -p 503:503 --name iotgateway --restart always 15261671110/iotgateway
 
 ## 登入系统
-1. 用户名 admin,密码 000000
-2. 打开发布文件路径下的ReadMe文件夹中的手摸手，按照顺序添加设备进行采集
+1. 访问[iotgateway](http://localhost:518/)后台：http://localhost:518
+2. 用户名 admin,密码 000000
+3. 打开发布文件路径下的ReadMe文件夹中的手摸手，按照顺序添加设备进行采集
 # 采集配置
 ![1 登录](https://user-images.githubusercontent.com/29589505/145705166-d5818557-4ba1-4e7b-b8d8-8f5f4b28868f.png)
 ![2 首页](https://user-images.githubusercontent.com/29589505/145705168-94b3ff0c-2f5c-4a31-8e83-c2ed799320ce.png)
@@ -92,18 +93,3 @@
 ![6 gateway 修改设备为自启动](https://user-images.githubusercontent.com/29589505/145705269-c816789c-cd67-4c01-973f-ae4f10eb41d9.png)
 ![7 thingsboard 查看到设备和数据](https://user-images.githubusercontent.com/29589505/145705270-31d8884f-7f6f-4ff5-a6bb-1d57a97012f4.png)
 ![8 gateway 查看到数据](https://user-images.githubusercontent.com/29589505/145705271-cb80b80e-006e-4312-8843-6d0ae9457cb1.png)
-
-
-
-
-# 善假于物
-1. [WTM(MIT)](https://github.com/dotnetcore/WTM)
-2. [OPCUA(OPCUA)](https://github.com/OPCFoundation/UA-.NETStandard)
-3. [NModbus4(MIT)](https://github.com/NModbus4/NModbus4)
-4. [S7NetPlus(MIT)](https://github.com/S7NetPlus/s7netplus)
-5. [MQTTnet(MIT)](https://github.com/chkr1011/MQTTnet)
-6. [DynamicExpresso(MIT)](https://github.com/dynamicexpresso/DynamicExpresso)
-7. [EFCore(MIT)](https://github.com/dotnet/efcore)
-8. [LayUI(MIT)](https://github.com/sentsin/layui)
-9. [SQLite](https://github.com/sqlite/sqlite)
-10. [mtconnect ](https://github.com/ctacke/mtconnect)
