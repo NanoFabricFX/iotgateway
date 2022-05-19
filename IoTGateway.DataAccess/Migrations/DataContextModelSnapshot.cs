@@ -26,6 +26,9 @@ namespace IoTGateway.DataAccess.Migrations
                     b.Property<bool>("AutoStart")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("CgUpload")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("CreateBy")
                         .HasColumnType("TEXT");
 
@@ -43,6 +46,9 @@ namespace IoTGateway.DataAccess.Migrations
 
                     b.Property<Guid?>("DriverId")
                         .HasColumnType("TEXT");
+
+                    b.Property<uint>("EnforcePeriod")
+                        .HasColumnType("INTEGER");
 
                     b.Property<uint>("Index")
                         .HasColumnType("INTEGER");

@@ -1,6 +1,13 @@
 # iotgateway 
-## [iotgateway在线体验](http://42.193.160.84:518/)访问：http://42.193.160.84:518/
-## [iotgateway教程文档](http://42.193.160.84/)访问：http://iotgateway.net/
+## [iotgateway在线体验](http://iotgateway.net:518/)访问：http://iotgateway.net:518/
+## [iotgateway教程文档](http://iotgateway.net/)访问：http://iotgateway.net/
+## 交流
+| 公众号:工业物联网网关 |    [QQ群:712105424](https://qm.qq.com/cgi-bin/qm/qr?k=e3Y8biyVdhDxx3LPbjvNY3TSNOEAmjp7&jump_from=webapi)  |
+| ------ | ---- |
+| ![qrcode_for_gh_6ca4c5dd92d0_258](https://user-images.githubusercontent.com/29589505/166852050-a1799cfd-169f-4659-a1dd-fe0883e242a6.jpg) | ![qq](https://user-images.githubusercontent.com/29589505/167337619-5128fc18-ba5d-466f-82a0-9ef2adf12811.png) |
+
+
+
 基于.net6的跨平台物联网网关。通过可视化配置，轻松的连接到你的任何设备和系统(如PLC、扫码枪、CNC、数据库、串口设备、上位机、OPC Server、OPC UA Server、Mqtt Server等)，从而与 Thingsboard、IoTSharp、ThingsCloud或您自己的物联网平台进行双向数据通讯。提供简单的驱动开发接口；当然也可以进行边缘计算。
 
 * 抛砖引玉，共同进步
@@ -22,14 +29,14 @@
 ## 项目中OPCUA相关功能仅用作学习及测试，如使用OPCUA协议请联系OPC基金会进行授权，产生一切纠纷与本项目无关
 
 # 体验
-1. 在线体验[iotgateway](http://42.193.160.84:518/)后台：http://42.193.160.84:518/
+1. 在线体验[iotgateway](http://iotgateway.net:518/)后台：http://iotgateway.net:518/
 2. 用户名 admin 密码 000000
 3. 内置Modbustcp模拟设备 ip 172.17.0.1 port 503 不要修改，否则连不上
 4. 其中modbus地址0-1为固定值，2-9为随机值，10-19为0
-5. 外网访问测试modbus设备，请连接:42.193.160.84:503，进行标准modbus协议读写
-6. 外网访问测试mqtt服务器，42.193.160.84:1888 admin 000000
-7. 外网访问测试opcua服务，opc.tcp://42.193.160.84:62541/Quickstarts/ReferenceServer 匿名访问
-8. 想要通过mqtt接收数据，请连接mqttserver:42.193.160.84,1888 admin 000000；订阅topic: v1/gateway/telemetry
+5. 外网访问测试modbus设备，请连接:iotgateway.net:503，进行标准modbus协议读写
+6. 外网访问测试mqtt服务器，iotgateway.net:1888 admin 000000
+7. 外网访问测试opcua服务，opc.tcp://iotgateway.net:62541/Quickstarts/ReferenceServer 匿名访问
+8. 想要通过mqtt接收数据，请连接mqttserver:iotgateway.net,1888 admin 000000；订阅topic: v1/gateway/telemetry
 ## 3D可视化(数字孪生?)
 ![easteregg](https://user-images.githubusercontent.com/29589505/147798707-cf4de713-9bb6-48c1-88a6-ac9f703f89d2.gif)
 ## 数据实时更新
@@ -48,13 +55,13 @@
 
 # 运行
 ## windows主机运行：
-1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-windows-x64.zip)发布版本
+1. [下载Releasev0.6.0](https://github.com/iioter/iotgateway/releases/download/v0.6.0/iotgateway-0.6.0-windows-x64.zip)发布版本
 2. 解压release包，运行IoTGateway.exe
 ## linux-x64主机运行：
-1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-linux-x64.zip)发布版本
+1. [下载Releasev0.6.0](https://github.com/iioter/iotgateway/releases/download/v0.6.0/iotgateway-0.6.0-linux-x64.zip)发布版本
 2. 解压release包，运行IoTGateway
 ## linux-arm主机运行：
-1. [下载Releasev0.5.0](https://github.com/iioter/iotgateway/releases/download/v0.5.0/iotgateway-0.5.0-linux-arm.rar)发布版本
+1. [下载Releasev0.6.0](https://github.com/iioter/iotgateway/releases/download/v0.6.0/iotgateway-0.6.0-linux-arm.rar)发布版本
 2. 解压release包，运行IoTGateway
 ## linux/amd64,win/amd64 docker运行(官方仓)
 1. docker run -d -p 518:518 -p 1888:1888 -p 62541:62541 -p 503:503 --name iotgateway --restart always 15261671110/iotgateway
@@ -93,3 +100,7 @@
 ![6 gateway 修改设备为自启动](https://user-images.githubusercontent.com/29589505/145705269-c816789c-cd67-4c01-973f-ae4f10eb41d9.png)
 ![7 thingsboard 查看到设备和数据](https://user-images.githubusercontent.com/29589505/145705270-31d8884f-7f6f-4ff5-a6bb-1d57a97012f4.png)
 ![8 gateway 查看到数据](https://user-images.githubusercontent.com/29589505/145705271-cb80b80e-006e-4312-8843-6d0ae9457cb1.png)
+
+![connectdevice](https://user-images.githubusercontent.com/29589505/166888783-37f10d50-05cb-416a-95d1-528f556ef4a6.png)
+
+![disconnectdevice](https://user-images.githubusercontent.com/29589505/166888879-34f5c014-f590-4224-9848-2020f5deb95f.png)
