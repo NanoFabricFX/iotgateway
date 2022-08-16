@@ -233,6 +233,9 @@ namespace IoTGateway.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ClientId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CreateBy")
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
